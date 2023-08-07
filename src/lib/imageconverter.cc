@@ -181,6 +181,7 @@ void ImageConverterPrivate::pagesLoaded(bool ok) {
 
 	if (settings.fmt != "svg") {
 		image = QImage(rect.size(), QImage::Format_ARGB32_Premultiplied);
+		image.fill(qRgba(0, 0, 0, 0));
 		painter.begin(&image);
 	} else {
 		generator.setOutputDevice(dev);
